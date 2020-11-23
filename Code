@@ -1,0 +1,35 @@
+#Number Guessing
+
+import random
+import math
+def number_guessing():
+    name=input("Please Enter ur name ::")
+    print(f"welocme {name} to this game !!!")
+    count=0
+    
+    lower=int(input("Enter lower bound::"))
+    upper=int(input("Enter upper bound::"))
+    
+    sys_gen_num=random.randint(lower,upper)
+    
+    chances=round((upper-lower)/2)
+    print(f"You have {chances} chances to guess the number")
+    
+    while count<chances:
+        count+=1
+        
+        user_guess=int(input("Enter your guess:::"))
+        
+        if user_guess==sys_gen_num:
+            print("congratulations ! you won")
+        elif user_guess<sys_gen_num:
+            print("ooops!! guess is below the answer")
+        elif user_guess>sys_gen_num:
+            print("ooops!! guess is above the answer")
+        else:
+            print("Invalid input !!!")
+            
+    if count>chances:
+        print(f"The answer is {sys_gen_num}")
+        print("Better luck next tym !!")
+number_guessing()
